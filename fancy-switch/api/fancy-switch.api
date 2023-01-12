@@ -1,0 +1,20 @@
+public final class dev/sasikanth/fancy/toggle/ComposableSingletons$FancySwitchKt {
+	public static final field INSTANCE Ldev/sasikanth/fancy/toggle/ComposableSingletons$FancySwitchKt;
+	public static field lambda-1 Lkotlin/jvm/functions/Function2;
+	public static field lambda-2 Lkotlin/jvm/functions/Function2;
+	public static field lambda-3 Lkotlin/jvm/functions/Function2;
+	public static field lambda-4 Lkotlin/jvm/functions/Function2;
+	public fun <init> ()V
+	public final fun getLambda-1$fancy_switch_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda-2$fancy_switch_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda-3$fancy_switch_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda-4$fancy_switch_release ()Lkotlin/jvm/functions/Function2;
+}
+
+public final class dev/sasikanth/fancy/toggle/FancySwitchKt {
+	public static final fun FancySwitch (ZLandroidx/compose/ui/Modifier;ZLdev/sasikanth/fancy/toggle/SwitchColors;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V
+}
+
+public final class dev/sasikanth/fancy/toggle/SwitchColors {
+}
+

@@ -44,6 +44,10 @@ android {
     }
 }
 
+apiValidation {
+    ignoredClasses.add("dev.sasikanth.fancy.toggle.BuildConfig")
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
