@@ -6,20 +6,23 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import dev.sasikanth.toggle.sample.ui.theme.FacnySwitchTheme
+import dev.sasikanth.fancy.toggle.FancySwitch
+import dev.sasikanth.toggle.sample.ui.theme.FancySwitchTheme
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
-      FacnySwitchTheme {
-        // A surface container using the 'background' color from the theme
+      FancySwitchTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-          Greeting("Android")
+          Switch()
         }
       }
     }
@@ -27,14 +30,20 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-  Text(text = "Hello $name!")
+fun Switch() {
+  var checked by remember {
+    mutableStateOf(false)
+  }
+
+  FancySwitch(checked = checked) {
+    checked = !checked
+  }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-  FacnySwitchTheme {
-    Greeting("Android")
+  FancySwitchTheme {
+    Switch()
   }
 }
