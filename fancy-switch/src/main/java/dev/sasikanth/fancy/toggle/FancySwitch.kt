@@ -45,6 +45,8 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import dev.sasikanth.fancy.toggle.SwitchDefaults.RevealProgressChecked
+import dev.sasikanth.fancy.toggle.SwitchDefaults.RevealProgressUnchecked
 import dev.sasikanth.fancy.toggle.SwitchDefaults.StiffnessMedium
 import kotlin.math.roundToInt
 
@@ -147,14 +149,16 @@ private fun SwitchContainer(
         spring(stiffness = StiffnessMedium)
       }
     ) {
-      if (it) 1f else 0f
+      if (it) RevealProgressChecked else RevealProgressUnchecked
     }
 
-    SwitchOff(
-      checked = checked,
-      enabled = enabled,
-      switchColors = switchColors
-    ) { thumbOffset }
+    if (revealProgress != RevealProgressChecked || !enabled) {
+      SwitchOff(
+        checked = checked,
+        enabled = enabled,
+        switchColors = switchColors
+      ) { thumbOffset }
+    }
 
     /**
      * When a switch is enabled and turned on, we animate the checked
@@ -166,7 +170,7 @@ private fun SwitchContainer(
      * above the unchecked switch and animate the clip using
      * circular reveal.
      */
-    if (enabled) {
+    if (enabled && revealProgress != RevealProgressUnchecked) {
       SwitchOn(
         checked = checked,
         switchColors = switchColors,
@@ -316,6 +320,9 @@ private object SwitchDefaults {
   val RevealRadius = 44.dp
 
   const val StiffnessMedium = (Spring.StiffnessMedium + Spring.StiffnessMediumLow) / 2f
+
+  const val RevealProgressChecked = 1f
+  const val RevealProgressUnchecked = 0f
 
   private const val DisabledAlpha = 0.12f
 
