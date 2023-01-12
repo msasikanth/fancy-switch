@@ -1,5 +1,7 @@
 # Fancy Switch
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.sasikanth/fancy-switch/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.sasikanth/fancy-switch)
+
 A Material 3 esque button with a fancy reveal animations when toggling between states
 
 ![](/art/switch.gif)
