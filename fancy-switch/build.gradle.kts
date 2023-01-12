@@ -6,6 +6,12 @@ plugins {
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.12.1"
 }
 
+ext {
+    set("PUBLISH_GROUP_ID", "dev.sasikanth")
+    set("PUBLISH_ARTIFACT_ID", "fancy-switch")
+    set("PUBLISH_VERSION", "1.0.0")
+}
+
 android {
     namespace = "dev.sasikanth.fancy.toggle"
     compileSdk = 33
@@ -60,3 +66,5 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.3")
 }
+
+apply(from = "${rootProject.projectDir}/scripts/publish-module.gradle")
