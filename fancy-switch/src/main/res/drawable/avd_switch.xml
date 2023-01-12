@@ -1,0 +1,64 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="off_to_on"
+            android:width="16dp"
+            android:height="16dp"
+            android:viewportWidth="16"
+            android:viewportHeight="16">
+            <group
+                android:name="stems"
+                android:pivotX="8"
+                android:pivotY="8">
+                <path
+                    android:name="static_stem"
+                    android:pathData="M 4 4 L 12 12 Z"
+                    android:strokeWidth="2"
+                    android:strokeColor="#000000"
+                    android:strokeLineCap="round"
+                    android:strokeLineJoin="round" />
+                <path
+                    android:name="moving_stem"
+                    android:pathData="M 4 12 L 12 4"
+                    android:strokeWidth="2"
+                    android:strokeColor="#000000"
+                    android:strokeLineCap="round"
+                    android:strokeLineJoin="round" />
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="moving_stem">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="pathData"
+                android:valueFrom="M 4 12 L 12 4"
+                android:valueTo="M 8 12.5 L 11 9.5"
+                android:valueType="pathType" />
+        </aapt:attr>
+    </target>
+    <target android:name="static_stem">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="pathData"
+                android:valueFrom="M 4 4 L 12 12 Z"
+                android:valueTo="M 5 3.5 L 11 9.5 Z"
+                android:valueType="pathType" />
+        </aapt:attr>
+    </target>
+    <target android:name="stems">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="rotation"
+                android:valueFrom="0"
+                android:valueTo="90"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+</animated-vector>

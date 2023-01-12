@@ -45,11 +45,13 @@ android {
 
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.3.2")
-    api("androidx.compose.ui:ui:1.3.2")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
+    api("androidx.compose.ui:ui:1.3.3")
     api("androidx.compose.material3:material3:1.0.1")
+    api("androidx.compose.animation:animation-graphics:1.3.3")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.2")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.3.2")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.2")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.3")
+    androidTestImplementation("com.google.truth:truth:1.1.3")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.3")
 }
