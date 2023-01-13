@@ -22,7 +22,7 @@ You can add the component to your Composable like so
 
 ```kotlin
 @Composable
-fun SwitchTheme() {
+fun SwitchDemo() {
   val checkedState = remember { mutableStateOf(false) }
   FancySwitch(
     modifier = Modifier.padding(16.dp),
